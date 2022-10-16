@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Exception;
+
 class CalculateBinaryTreeHight
 {
     private BinaryTree $binaryTree;
@@ -13,14 +15,34 @@ class CalculateBinaryTreeHight
     
     public function calculate(): int
     {
-        $leftNodeHight = $this->getNodeHight(
-            $this->binaryTree->getNode()->left
-            );
-        
-        $rightNodeHight = $this->getNodeHight(
-            $this->binaryTree->getNode()->right
-            );
-        
+        $this->validateBinaryTreeHasValue();
+        $leftNodeHight = $this->getNodeHightFromLeft();
+        $rightNodeHight = $this->getNodeHightFromRight();
+        return $this->getBiggerHight($leftNodeHight, $rightNodeHight);
+    }
+    
+    private function validateBinaryTreeHasValue(): void
+    {
+        if ($this->binaryTree->getNode() == null) {
+            throw new Exception('Binary tree has no value');
+        }
+    }
+    
+    private function getNodeHightFromLeft(): int
+    {
+        return $this->getNodeHight($this->binaryTree->getNode()->left);
+    }
+    
+    private function getNodeHightFromRight(): int
+    {
+        return $this->getNodeHight($this->binaryTree->getNode()->right);
+    }
+    
+    private function getBiggerHight(
+        int $leftNodeHight, 
+        int $rightNodeHight
+    ): int
+    {
         if ($leftNodeHight > $rightNodeHight) {
             return $leftNodeHight;
         } else {

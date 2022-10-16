@@ -1,19 +1,19 @@
 # Data Structure - Binary Tree
-Árvore binária em PHP
+Binary tree in PHP
 
-## Pré-requisitos
+## Prerequisite
 * Docker
 * Docker Compose
 
-## Instalando
-Para instalar siga os passos abaixo:
+## Instalation
+To install follow the steps bellow:
 
-### Rodando o container
+### Running the container
 ```
 docker-compose build && docker-compose up -d
 ```
 
-### Instalando as dependências
+### Installing dependencies
 ```
 docker exec -it binary-tree composer install
 ```

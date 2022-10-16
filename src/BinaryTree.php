@@ -22,7 +22,7 @@ class BinaryTree
         }
     }
     
-    public function getNode(): Node
+    public function getNode(): ?Node
     {
         return $this->root;
     }
