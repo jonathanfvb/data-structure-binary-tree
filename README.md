@@ -18,7 +18,7 @@ make up
 make install
 ```
 
-## Running Unit Tests
+### Running Unit Tests
 ```
 make test
 ```
