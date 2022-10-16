@@ -8,12 +8,22 @@ Binary tree in PHP
 ## Instalation
 To install follow the steps bellow:
 
-### Running the container
+### Running the application
 ```
-docker-compose build && docker-compose up -d
+make up
 ```
 
 ### Installing dependencies
 ```
-docker exec -it binary-tree composer install
+make install
+```
+
+## Running Unit Tests
+```
+make test
+```
+
+### Stopping the application
+```
+make down
 ```
